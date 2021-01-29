@@ -21,7 +21,9 @@ npm install @moveideas/alpine-product-360
 ```
 
 ```javascript
-import '@moveideas/alpine-product-360';
+import alpineCarousel from '@moveideas/alpine-product-360';
+// Make available to fill the x-data directive
+window.alpineCarousel = alpineCarousel;
 ```
 
 ### Using via CDN 
