@@ -1,4 +1,3 @@
 {
-    "/dist/index.min.js": "/dist/index.min.js",
-    "/example/example.min.js": "/example/example.min.js"
+    "/dist/index.js": "/dist/index.js"
 }

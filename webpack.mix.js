@@ -1,6 +1,11 @@
 const mix = require('laravel-mix');
 
-mix.js('index.js', 'dist/index.min.js');
-mix.js('example/example.js', 'example/example.min.js');
+mix.js('index.js', 'dist/index.js');
 
-mix.disableNotifications();
+mix.webpackConfig({
+    output: {
+        library: 'alpineCarousel',
+        libraryTarget: 'umd',
+        umdNamedDefine: true
+    }
+});
