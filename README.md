@@ -42,7 +42,7 @@ The plugin injects for you in the window object a function called `alpineCarouse
 - **parameters** (optional): If you would like customize the plugin — [view parameters available](##Parameters)
 
 ```html
-<div x-data="alpineCarousel.default(['URL1', 'URL2', 'URL3', {infinite: true}])" x-init="start()">
+<div x-data="alpineCarousel(['URL1', 'URL2', 'URL3', {infinite: true}])" x-init="start()">
     <img
         :src="carousel.currentPath"
         @mouseup="handleMouseUp"
