@@ -28,7 +28,7 @@ window.alpineCarousel = alpineCarousel;
 
 ### Using via CDN 
 
-To pull the plugin for quick demos, grab the latest build via CDN:
+To pull the plugin for quick demos, grab the latest build via CDN and use it with the function `alpineCarousel.default()`
 
 ```html
 <script type="module" src="https://cdn.jsdelivr.net/gh/moveideas/alpine-product-360@1.1.1/dist/index.min.js"></script>
