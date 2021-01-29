@@ -1,6 +1,6 @@
 {
   "name": "@moveideas/alpine-product-360",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Loop a series of images in a 360 rotatation carousel with this component for alpine.js",
   "main": "dist/index.js",
   "publishConfig": {
