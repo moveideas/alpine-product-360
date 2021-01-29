@@ -1,43 +1,46 @@
 {
-  "name": "@{package-slug}",
+  "name": "@moveideas/alpine-product-360",
   "version": "0.1.0",
-  "description": "{package-description}",
-  "main": "dist/index.js",
+  "description": "Loop a series of images in a 360 rotatation carousel with this component for alpine.js",
+  "main": "dist/index.min.js",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "test": "jest",
-    "test-watch": "jest --watch",
-    "dev": "npm run development",
-    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "npm run development -- --watch",
-    "build": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "watch": "mix watch",
+    "build": "mix --production"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/{package-slug}.git"
+    "url": "git+https://github.com/moveideas/alpine-product-360.git"
   },
   "keywords": [
-    "alpinejs"
+    "alpine",
+    "alpinejs",
+    "carousel",
+    "360",
+    "products",
+    "dragdrop"
   ],
-  "author": "{author-name}",
+  "author": {
+    "name": "Jean-Baptiste Fournot",
+    "email": "jb@moveideas.co",
+    "url": "https://moveideas.co"
+  },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/{package-slug}/issues"
+    "url": "https://github.com/moveideas/alpine-product-360/issues"
   },
-  "homepage": "https://github.com/{package-slug}#readme",
+  "homepage": "https://github.com/moveideas/alpine-product-360#readme",
   "devDependencies": {
     "alpinejs": "^2.4.1",
     "cross-env": "^7.0.2",
     "jest": "^26.0.1",
-    "laravel-mix": "^5.0.4",
-    "vue-template-compiler": "^2.6.11",
-    "webpack-livereload-plugin": "^1.2.0"
+    "laravel-mix": "^6.0.11",
+    "postcss": "^8.2.4"
   },
   "directories": {
-    "example": "example",
-    "test": "test"
+    "example": "example"
   },
   "dependencies": {}
 }

@@ -1,16 +1,80 @@
 <!DOCTYPE html>
 
 <head>
-	<script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
-	<script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
-	<script src="../dist/index.js"></script>
 	<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-
 </head>
 
 <body class="flex items-center justify-center">
-	
-	<div x-data="{}"></div>
+	<button @click="setThumbnail()">TEST</button>
+	<script type="module" src="https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@0.5.x/dist/index.min.js"></script>
+	<script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+	<script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
+	<script crossorigin src="../index.js"></script>
+	<script crossorigin type="module">
+		import useCarousel from '../index.js';
+		console.log(useCarousel);
 
-	<script src="http://localhost:35729/livereload.js"></script>
+		window.app = function(){
+			return {
+				thumbnails: [
+					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/00.png',
+					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/01.png',
+					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/02.png',
+					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/03.png',
+					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/04.png',
+					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/05.png',
+					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/06.png',
+					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/07.png',
+					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/08.png',
+					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/09.png',
+					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/10.png',
+					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/11.png',
+					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/12.png',
+					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/13.png',
+					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/14.png',
+					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/15.png',
+					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/16.png',
+					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/17.png',
+					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/18.png',
+					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/19.png',
+					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/20.png',
+					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/21.png',
+					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/22.png',
+					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/22.png',
+					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/23.png',
+					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/24.png',
+				],
+				setThumbnail() {
+					this.$component('carousel').setThumbnails([
+						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/00.png',
+						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/01.png',
+						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/02.png',
+						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/03.png',
+						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/04.png',
+						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/05.png',
+						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/06.png',
+						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/07.png',
+						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/08.png',
+						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/09.png',
+						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/10.png',
+						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/11.png',
+						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/12.png',
+						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/13.png',
+						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/14.png',
+						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/15.png',
+						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/16.png',
+						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/17.png',
+						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/18.png',
+						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/19.png',
+						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/20.png',
+						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/21.png',
+						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/22.png',
+						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/22.png',
+						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/23.png',
+						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/24.png',
+					]);
+				}
+			}
+		}
+	</script>
 </body>
