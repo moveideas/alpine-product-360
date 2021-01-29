@@ -29,7 +29,7 @@ import '@moveideas/alpine-product-360';
 To pull the plugin for quick demos, grab the latest build via CDN:
 
 ```html
-<script type="module" src="URL_HERE"></script>
+<script type="module" src="http://cdn.jsdelivr.net/gh/moveideas/alpine-product-360@1.1.0/dist/index.js"></script>
 ```
 
 ## Usage
