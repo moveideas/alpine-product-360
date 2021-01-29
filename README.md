@@ -31,7 +31,7 @@ window.alpineCarousel = alpineCarousel;
 To pull the plugin for quick demos, grab the latest build via CDN:
 
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/gh/moveideas/alpine-product-360@1.1.0/dist/index.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/gh/moveideas/alpine-product-360@1.1.1/dist/index.min.js"></script>
 ```
 
 ## Usage
