@@ -7,7 +7,7 @@ Loop a series of images in a 360 rotatation carousel with this plugin for Vue.js
 
 ## Demo
 
-[▶️ Try the demo](DEMO_URL)
+[▶️ Try the demo](https://nsfpk.csb.app/) or [▶️ View the sandbox](https://codesandbox.io/s/charming-black-nsfpk?file=/index.html)
 
 ## Installation
 
@@ -21,7 +21,9 @@ npm install @moveideas/alpine-product-360
 ```
 
 ```javascript
-import '@moveideas/alpine-product-360';
+import alpineCarousel from '@moveideas/alpine-product-360';
+// Make available to fill the x-data directive
+window.alpineCarousel = alpineCarousel;
 ```
 
 ### Using via CDN 
@@ -29,7 +31,7 @@ import '@moveideas/alpine-product-360';
 To pull the plugin for quick demos, grab the latest build via CDN:
 
 ```html
-<script type="module" src="URL_HERE"></script>
+<script type="module" src="https://cdn.jsdelivr.net/gh/moveideas/alpine-product-360@1.1.0/dist/index.js"></script>
 ```
 
 ## Usage
@@ -40,15 +42,15 @@ The plugin injects for you in the window object a function called `alpineCarouse
 - **parameters** (optional): If you would like customize the plugin — [view parameters available](##Parameters)
 
 ```html
-<div x-data="alpineCarousel.default(['URL1', 'URL2', 'URL3', {infinite: true}])" x-init="start()">
-  <img
-  	:src="carousel.currentPath"
-    @mouseup="handleMouseUp"
-		@mousedown="handleMouseDown"
-		@mousemove="handleMouseMove"
-		@mouseleave="handleMouseLeave" 
-		draggable="false"
-	>
+<div x-data="alpineCarousel(['URL1', 'URL2', 'URL3', {infinite: true}])" x-init="start()">
+    <img
+        :src="carousel.currentPath"
+        @mouseup="handleMouseUp"
+        @mousedown="handleMouseDown"
+        @mousemove="handleMouseMove"
+        @mouseleave="handleMouseLeave" 
+        draggable="false"
+    >
 </div>
 ```
 
