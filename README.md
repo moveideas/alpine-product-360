@@ -7,7 +7,7 @@ Loop a series of images in a 360 rotatation carousel with this plugin for Vue.js
 
 ## Demo
 
-[▶️ Try the demo](DEMO_URL)
+[▶️ Try the demo](https://nsfpk.csb.app/) or [▶️ View the sandbox](https://codesandbox.io/s/charming-black-nsfpk?file=/index.html)
 
 ## Installation
 
