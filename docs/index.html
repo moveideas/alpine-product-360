@@ -4,16 +4,16 @@
 	<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body class="flex items-center justify-center">
+<body x-data="app()" class="flex items-center justify-center">
+	<div x-data="{ thumbnails: $parent.thumbnails, ...alpineCarousel() }" x-init="mounted($watch)" x-id="carousel">
+		<img draggable="false" @mouseup="handleMouseUp()" @mousedown="handleMouseDown($event)" @mousemove="handleMouseMove($event)" @mouseleave="handleMouseLeave()" @touchend="handleTouchEnd" @touchstart="handleTouchStart($event)" @touchmove="handleTouchMove($event)" :src="carousel.currentPath">
+	</div>
 	<button @click="setThumbnail()">TEST</button>
 	<script type="module" src="https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@0.5.x/dist/index.min.js"></script>
 	<script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
 	<script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
-	<script type="module" src="https://cdn.jsdelivr.net/gh//moveideas/alpine-product-360@master/dist/index.min.js"></script>
-	<script crossorigin type="module">
-		import useCarousel from '../index.js';
-		console.log(useCarousel);
-
+	<script src="https://cdn.jsdelivr.net/gh//moveideas/alpine-product-360@master/dist/index.js"></script>
+	<script type="text/javascript">
 		window.app = function(){
 			return {
 				thumbnails: [

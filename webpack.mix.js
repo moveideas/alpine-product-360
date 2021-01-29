@@ -6,6 +6,7 @@ mix.webpackConfig({
     output: {
         library: 'alpineCarousel',
         libraryTarget: 'umd',
-        umdNamedDefine: true
+        umdNamedDefine: true,
+        globalObject: 'this'
     }
 });
