@@ -22,11 +22,7 @@
     "products",
     "dragdrop"
   ],
-  "author": {
-    "name": "Jean-Baptiste Fournot",
-    "email": "jb@moveideas.co",
-    "url": "https://moveideas.co"
-  },
+  "author": "Jean-Baptiste Fournot <jb@moveideas.co> (https://moveideas.co)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/moveideas/alpine-product-360/issues"
@@ -40,7 +36,7 @@
     "postcss": "^8.2.4"
   },
   "directories": {
-    "example": "example"
+    "doc": "docs"
   },
   "dependencies": {}
 }
