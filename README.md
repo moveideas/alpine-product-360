@@ -41,14 +41,14 @@ The plugin injects for you in the window object a function called `alpineCarouse
 
 ```html
 <div x-data="alpineCarousel.default(['URL1', 'URL2', 'URL3', {infinite: true}])" x-init="start()">
-  <img
-  	:src="carousel.currentPath"
-    @mouseup="handleMouseUp"
-		@mousedown="handleMouseDown"
-		@mousemove="handleMouseMove"
-		@mouseleave="handleMouseLeave" 
-		draggable="false"
-	>
+    <img
+        :src="carousel.currentPath"
+        @mouseup="handleMouseUp"
+        @mousedown="handleMouseDown"
+        @mousemove="handleMouseMove"
+        @mouseleave="handleMouseLeave" 
+        draggable="false"
+    >
 </div>
 ```
 
