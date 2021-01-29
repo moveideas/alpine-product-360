@@ -10,3 +10,5 @@ mix.webpackConfig({
         globalObject: 'this'
     }
 });
+
+mix.disableNotifications();

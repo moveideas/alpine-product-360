@@ -1,78 +1,70 @@
 <!DOCTYPE html>
 
 <head>
-	<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+	<link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
 </head>
 
-<body x-data="app()" class="flex items-center justify-center">
-	<div x-data="{ thumbnails: $parent.thumbnails, ...alpineCarousel() }" x-init="mounted($watch)" x-id="carousel">
-		<img draggable="false" @mouseup="handleMouseUp()" @mousedown="handleMouseDown($event)" @mousemove="handleMouseMove($event)" @mouseleave="handleMouseLeave()" @touchend="handleTouchEnd" @touchstart="handleTouchStart($event)" @touchmove="handleTouchMove($event)" :src="carousel.currentPath">
+<body class="text-center" x-data="app()">
+	<div x-data="alpineCarousel.default($parent.getImages('0001'))" x-init="start()" x-id="carousel" class="product__image flex justify-center">
+		<p x-show="!isLoaded">Chargement en cours</p>
+		<img 
+			x-show="isLoaded"
+			@mouseup="handleMouseUp"
+			@mousedown="handleMouseDown"
+			@mousemove="handleMouseMove"
+			@mouseleave="handleMouseLeave" 
+			touchend="handleTouchEnd"
+			@touchstart="handleTouchStart"
+			@touchmove="handleTouchMove"
+			:src="carousel.currentPath"
+			draggable="false"
+			class="cursor-move"
+		>
 	</div>
-	<button @click="setThumbnail()">TEST</button>
+	<div class="product__colours fixed bottom-10 w-full text-center">
+		<div class="product__colours relative z-0 inline-flex shadow-sm rounded-md">
+			<button type="button" @click="setColour('0001')" class="relative inline-flex items-center px-4 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
+				<svg class="-ml-0.5 mr-1.5 h-2 w-2 colors.amber-600" fill="currentColor" viewBox="0 0 8 8">
+					<circle cx="4" cy="4" r="3" />
+				</svg>
+				<span class="button__value">Colour 0001</span>
+			</button>
+			<button type="button" @click="setColour('0002')" class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
+				<svg class="-ml-0.5 mr-1.5 h-2 w-2 text-gray-600" fill="currentColor" viewBox="0 0 8 8">
+					<circle cx="4" cy="4" r="3" />
+				</svg>
+				<span class="button__value">Colour 0002</span>
+			</button>
+			<button type="button" @click="setColour('0003')" class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
+				<svg class="-ml-0.5 mr-1.5 h-2 w-2 text-indigo-700" fill="currentColor" viewBox="0 0 8 8">
+					<circle cx="4" cy="4" r="3" />
+				</svg>
+				<span class="button__value">Colour 0003</span>
+			</button>
+		</div>
+	</div>
 	<script type="module" src="https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@0.5.x/dist/index.min.js"></script>
 	<script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
 	<script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
-	<script src="https://cdn.jsdelivr.net/gh//moveideas/alpine-product-360@master/dist/index.js"></script>
+	<script src="../dist/index.js"></script>
 	<script type="text/javascript">
 		window.app = function(){
 			return {
-				thumbnails: [
-					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/00.png',
-					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/01.png',
-					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/02.png',
-					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/03.png',
-					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/04.png',
-					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/05.png',
-					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/06.png',
-					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/07.png',
-					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/08.png',
-					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/09.png',
-					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/10.png',
-					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/11.png',
-					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/12.png',
-					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/13.png',
-					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/14.png',
-					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/15.png',
-					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/16.png',
-					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/17.png',
-					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/18.png',
-					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/19.png',
-					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/20.png',
-					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/21.png',
-					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/22.png',
-					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/22.png',
-					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/23.png',
-					'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/0001/360/24.png',
-				],
-				setThumbnail() {
-					this.$component('carousel').setThumbnails([
-						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/00.png',
-						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/01.png',
-						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/02.png',
-						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/03.png',
-						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/04.png',
-						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/05.png',
-						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/06.png',
-						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/07.png',
-						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/08.png',
-						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/09.png',
-						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/10.png',
-						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/11.png',
-						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/12.png',
-						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/13.png',
-						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/14.png',
-						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/15.png',
-						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/16.png',
-						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/17.png',
-						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/18.png',
-						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/19.png',
-						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/20.png',
-						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/21.png',
-						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/22.png',
-						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/22.png',
-						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/23.png',
-						'https://portail.canadianoptical.com/documents/divisions/code/products/cd1055/0001/360/24.png',
-					]);
+				images: null,
+				getImages(colourCode) {
+					var images = [];
+					for (let index = 0; index < 25; index++) {
+						var thumbnailBaseURL = 'https://portail.canadianoptical.com/documents/divisions/code/products/cd1056/';
+						images.push(thumbnailBaseURL + colourCode +'/360/'+ ('0' + index).slice(-2) + '.png');
+					}
+					return images;
+				},
+				setColour(colourCode){
+					this.$component('carousel').setImages(
+						this.getImages(colourCode)
+					)
 				}
 			}
 		}
