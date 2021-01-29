@@ -20,7 +20,6 @@ export default (thumbnails, parameters = {}) => {
         keepPosition: true,
         speed: 10,
     }, parameters);
-    alert('test');
     return {
         ...configuration,
         thumbnails: thumbnails,
